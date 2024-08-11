@@ -1,0 +1,158 @@
+/* src/styles/Dashboard.css */
+
+
+.dashboard-main {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #0c0c0c;
+  text-align: center;
+  min-height: 100vh;
+  background-image:url(../assets/par.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.first .sec {
+  color: #f7b42c;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.first .tt {
+  color: #f1f5f1;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.first .third {
+  color: #08f914;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.candidates-table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  animation: slideIn 1s ease-out;
+}
+
+.candidates-table th,
+.candidates-table td {
+  padding: 20px;
+  text-align: center;
+}
+
+.candidates-table th {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+.candidates-table tr {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.candidates-table tr:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.candidate-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #0072ff;
+  transition: transform 0.3s;
+}
+
+.candidate-logo:hover {
+  transform: scale(1.2);
+}
+
+.vote-button {
+  background: linear-gradient(45deg, #ff5e3a, #ff2a2a);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.vote-button svg {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+.vote-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logout-button{
+  background: #f8f6f5;
+  color:black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 20px 10px;
+  display: inline-block;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-weight: bold;
+}
+.Result-button {
+  background: #07d344;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 20px 10px;
+  display: inline-block;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-weight: bold;
+}
+
+.logout-button:hover,
+.Result-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
