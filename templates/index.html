@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat-Bot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .chat-container {
+            background: #ffffff;
+            width: 360px;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            border: 1px solid #ddd;
+            transition: box-shadow 0.3s ease;
+        }
+        .chat-container:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .chat-header {
+            background: #007bff;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 500;
+            border-bottom: 1px solid #0056b3;
+        }
+        .chat-body {
+            padding: 20px;
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #f9f9f9;
+        }
+        .message {
+            display: flex;
+            flex-direction: column;
+            max-width: 75%;
+        }
+        .message.user {
+            align-self: flex-end;
+        }
+        .message.bot {
+            align-self: flex-start;
+        }
+        .text {
+            padding: 12px;
+            border-radius: 20px;
+            display: inline-block;
+            max-width: 100%;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            word-wrap: break-word;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .message.user .text {
+            background: #007bff;
+            color: #ffffff;
+        }
+        .message.bot .text {
+            background: #e1e1e1;
+        }
+        .chat-footer {
+            padding: 10px;
+            background: #ffffff;
+            border-top: 1px solid #ddd;
+            display: flex;
+        }
+        .chat-footer input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+        .chat-footer input:focus {
+            border-color: #007bff;
+        }
+        .chat-footer button {
+            padding: 12px 20px;
+            background: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+        .chat-footer button:hover {
+            background: #0056b3;
+        }
+        body {
+    font-family: 'Roboto', sans-serif;
+    background: url('vote.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+        
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        Chat-Bot
+    </div>
+    <div class="chat-body" id="chat-body">
+        {% for message in messages %}
+        <div class="message {{ message.sender }}">
+            <div class="text">{{ message.text }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="chat-footer">
+        <form method="POST">
+            <input type="text" name="question" id="user-input" placeholder="Type your question here..." required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const chatBody = document.getElementById('chat-body');
+    chatBody.scrollTop = chatBody.scrollHeight;
+</script>
+
+</body>
+</html>
